@@ -7,6 +7,39 @@
         mc:Ignorable="d"
         Title="Aendern" Height="450" Width="800">
     <Grid>
-        
+        <Label Content="Vorname" HorizontalAlignment="Left" Margin="35,38,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.373,-2.461" FontSize="14"/>
+        <Label Content="Nachname" HorizontalAlignment="Left" Margin="33,73,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.373,-2.461" FontSize="14"/>
+        <TextBox x:Name="Vorname" HorizontalAlignment="Left" Margin="109,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" Height="23"/>
+        <Label Content="Geburtsdatum" HorizontalAlignment="Left" Margin="34,109,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.373,-2.461" FontSize="14"/>
+        <Label Content="Adresse" Margin="34,147,682,0" VerticalAlignment="Top" RenderTransformOrigin="-0.373,-2.461" FontSize="14">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="E-Mail" Margin="32,285,670,0" VerticalAlignment="Top" RenderTransformOrigin="-0.373,-2.461" FontSize="14"/>
+        <Label Content="Beitrittsdatum" Margin="312,37,341,0" VerticalAlignment="Top" RenderTransformOrigin="-0.373,-2.461" FontSize="14"/>
+        <Label Content="Mitgliedschaftskategorie" Margin="312,69,287,0" VerticalAlignment="Top" RenderTransformOrigin="-0.373,-2.461" FontSize="14"/>
+        <Label Content="Notiz" Margin="312,137,335,0" VerticalAlignment="Top" RenderTransformOrigin="-0.373,-2.461" FontSize="14"/>
+        <TextBox x:Name="Nachname" HorizontalAlignment="Left" Margin="116,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" Height="23" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="Geburtsdatum" HorizontalAlignment="Left" Margin="139,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" Height="23" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="Adresse" HorizontalAlignment="Left" Margin="98,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" Height="23" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="PLZ" HorizontalAlignment="Left" Margin="79,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" Height="23" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="Ort" HorizontalAlignment="Left" Margin="78,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" Height="23" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="Tel" HorizontalAlignment="Left" Margin="78,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" Height="23" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="E_Mail" HorizontalAlignment="Left" Margin="89,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" Height="23" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="Beitrittsdatum" HorizontalAlignment="Left" Margin="415,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" Height="23" TextChanged="TextBox_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" Margin="318,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="311" Height="96"/>
+        <Button x:Name="Aendern_Button" Content="Ändern" HorizontalAlignment="Left" Margin="393,277,0,0" VerticalAlignment="Top" Width="110" Height="23" RenderTransformOrigin="0.4,-0.737"/>
+        <ComboBox x:Name="Mitgliedschaftskategorie" HorizontalAlignment="Left" Margin="479,71,0,0" VerticalAlignment="Top" Width="136" Height="26"/>
+        <ComboBox x:Name="Bezahlmethode" HorizontalAlignment="Left" Margin="427,110,0,0" VerticalAlignment="Top" Width="136" Height="26"/>
+        <Button x:Name="Exportieren_Button" Content="Exportieren" HorizontalAlignment="Left" Margin="519,277,0,0" VerticalAlignment="Top" Width="110" Height="23" RenderTransformOrigin="0.4,-0.737"/>
+        <Label Content="PLZ" Margin="33,182,715,0" VerticalAlignment="Top" RenderTransformOrigin="-0.373,-2.461" FontSize="14"/>
+        <Label Content="Ort" Margin="33,210,720,0" VerticalAlignment="Top" RenderTransformOrigin="-0.373,-2.461" FontSize="14"/>
+        <Label Content="Tel.:" Margin="34,247,709,0" VerticalAlignment="Top" RenderTransformOrigin="-0.373,-2.461" FontSize="14"/>
     </Grid>
 </Window>

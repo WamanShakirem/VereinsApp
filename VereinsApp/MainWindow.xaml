@@ -12,7 +12,7 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
         <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,46,0,268" Grid.ColumnSpan="2"/>
-        <Label Content="Mitglieder" HorizontalAlignment="Left" Margin="8,17,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.053,-8.704"/>
+        <Label Content="Neue Mitglieder" HorizontalAlignment="Left" Margin="8,17,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.053,-8.704"/>
         <TextBox HorizontalAlignment="Left" Margin="596,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
         <Button Content="Mitglied hinzufügen" HorizontalAlignment="Left" Margin="25,379,0,0" VerticalAlignment="Top" Width="127" Click="Button_Click"/>
         <Button Content="Mitglied bearbeiten" HorizontalAlignment="Left" Margin="151,379,0,0" VerticalAlignment="Top" Width="127" Click="Button_Click"/>
@@ -23,5 +23,6 @@
         <Label Content="E-Mail an alle Mitglieder senden" HorizontalAlignment="Left" Margin="20,167,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.053,-8.704"/>
         <Label Content="Suchen" HorizontalAlignment="Left" Margin="547,16,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.053,-8.704"/>
         <Button Content="Los" HorizontalAlignment="Left" Margin="723,20,0,0" VerticalAlignment="Top" Width="43" Click="Button_Click"/>
+        <Button x:Name="Übersicht" Content="Übersicht" HorizontalAlignment="Left" Margin="600,171,0,0" VerticalAlignment="Top" Width="94"/>
     </Grid>
 </Window>
