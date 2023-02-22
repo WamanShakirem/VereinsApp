@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\schwa\\OneDrive\\Desktop\\VereinsApp\\VereinsApp\\VereinsApp.csproj",
+      "projectUniqueName": "C:\\Users\\schwa\\OneDrive\\Desktop\\RepoVereinsApp\\VereinsApp\\VereinsApp.csproj",
       "projectName": "VereinsApp",
-      "projectPath": "C:\\Users\\schwa\\OneDrive\\Desktop\\VereinsApp\\VereinsApp\\VereinsApp.csproj",
+      "projectPath": "C:\\Users\\schwa\\OneDrive\\Desktop\\RepoVereinsApp\\VereinsApp\\VereinsApp.csproj",
       "packagesPath": "C:\\Users\\schwa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\schwa\\OneDrive\\Desktop\\VereinsApp\\VereinsApp\\obj\\",
+      "outputPath": "C:\\Users\\schwa\\OneDrive\\Desktop\\RepoVereinsApp\\VereinsApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\schwa\\AppData\\Roaming\\NuGet\\NuGet.Config",
