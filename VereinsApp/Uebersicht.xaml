@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="Uebersicht" Height="450" Width="800">
     <Grid>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <DataGrid x:Name="PersonenDatenGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="1,62,-1,-62"/>
+        <Label Content="Suche" HorizontalAlignment="Left" Margin="611,33,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBox_Search" HorizontalAlignment="Left" Margin="658,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Search_TextChanged"/>
 
     </Grid>
 </Window>

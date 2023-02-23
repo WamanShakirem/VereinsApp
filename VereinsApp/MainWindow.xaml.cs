@@ -30,8 +30,6 @@ namespace VereinsApp
         {
             InitializeComponent();
 
-            Los.Click += SearchButton_Click;
-
             load_database();
             update_grid(mitgliederliste);
         }
@@ -58,7 +56,6 @@ namespace VereinsApp
         
         private void update_grid(List<Mitglied> mitgliederliste) {
             PersonenDatenGrid.ItemsSource = mitgliederliste;
-
         }
 
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -93,20 +90,18 @@ namespace VereinsApp
         
         private void btn_change_mitglied_Click(object sender, RoutedEventArgs e)
         {
-          
-        }
-        
-        private void btn_delete_mitglied_Click(object sender, RoutedEventArgs e)
-        {
-          
-        }
-        
-        private void SearchButton_Click(object sender, RoutedEventArgs e)
-        {
-            
+            Aendern window = new Aendern();
+            window.Show();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+        private void btn_uebersicht_Click(object sender, RoutedEventArgs e)
+        {
+            Uebersicht uebersicht = new Uebersicht(mitgliederliste);
+            uebersicht.Show();
+        }
+
+        private void btn_del_Click(object sender, RoutedEventArgs e)
         {
 
         }

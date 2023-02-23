@@ -13,20 +13,14 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="1" Margin="10">
             <TextBox x:Name="SearchTextBox" TextChanged="SearchTextBox_TextChanged" />
-            <Button Content="Los" Click="SearchButton_Click" Margin="0 5"/>
         </StackPanel>
-        <DataGrid x:Name="PersonenDatenGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,46,0,268" Grid.ColumnSpan="2"/>
+        <DataGrid x:Name="PersonenDatenGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,46,0,176" Grid.ColumnSpan="2"/>
         <Label Content="Neue Mitglieder" HorizontalAlignment="Left" Margin="8,17,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.053,-8.704"/>
         <TextBox HorizontalAlignment="Left" Margin="596,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="SearchTextBox_TextChanged"/>
-        <Button x:Name="btn_add_mitglied" Content="Mitglied hinzufügen" HorizontalAlignment="Left" Margin="25,379,0,0" VerticalAlignment="Top" Width="127" Click="btn_add_mitglied_Click"/>
-        <Button x:Name="btn_change_mitglied" Content="Mitglied ändern" HorizontalAlignment="Left" Margin="151,379,0,0" VerticalAlignment="Top" Width="127" Click="btn_change_mitglied_Click"/>
-        <Button  x:Name="btn_delete_mitglied" Content="Mitglied löschen" HorizontalAlignment="Left" Margin="277,379,0,0" VerticalAlignment="Top" Width="127" Click="btn_delete_mitglied_Click"/>
-        <TextBox HorizontalAlignment="Left" Margin="25,196,0,0" TextWrapping="Wrap" Text="Betreff" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="26,219,0,0" TextWrapping="Wrap" Text="Nachricht" VerticalAlignment="Top" Width="570" Height="129"/>
-        <Button Content="Senden" HorizontalAlignment="Left" Margin="470,352,0,0" VerticalAlignment="Top" Width="126" Click="Button_Click"/>
-        <Label Content="E-Mail an alle Mitglieder senden" HorizontalAlignment="Left" Margin="20,167,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.053,-8.704"/>
+        <Button x:Name="btn_add_mitglied" Content="Mitglied hinzufügen" HorizontalAlignment="Left" Margin="78,313,0,0" VerticalAlignment="Top" Width="165" Click="btn_add_mitglied_Click" Height="40"/>
+        <Button x:Name="btn_change_mitglied" Content="Mitglied ändern" HorizontalAlignment="Left" Margin="242,313,0,0" VerticalAlignment="Top" Width="165" Click="btn_change_mitglied_Click" Height="40"/>
+        <Button  x:Name="btn_dele_mitglied" Content="Mitglied löschen" HorizontalAlignment="Left" Margin="406,313,0,0" VerticalAlignment="Top" Width="165" Click="btn_del_Click" Height="40"/>
         <Label Name="Suchen" Content="Suchen" HorizontalAlignment="Left" Margin="547,16,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.053,-8.704"/>
-        <Button Name ="Los" Content="Los" HorizontalAlignment="Left" Margin="723,20,0,0" VerticalAlignment="Top" Width="43" Click="Button_Click"/>
-        <Button x:Name="Übersicht" Content="Übersicht" HorizontalAlignment="Left" Margin="600,171,0,0" VerticalAlignment="Top" Width="94"/>
+        <Button x:Name="btn_uebersicht" Content="Übersicht" HorizontalAlignment="Left" Margin="570,313,0,0" VerticalAlignment="Top" Width="122" Height="40" Click="btn_uebersicht_Click"/>
     </Grid>
 </Window>

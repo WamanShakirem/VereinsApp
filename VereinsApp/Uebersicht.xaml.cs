@@ -19,9 +19,43 @@ namespace VereinsApp
     /// </summary>
     public partial class Uebersicht : Window
     {
-        public Uebersicht()
+        private List<Mitglied> mitgliederliste = new List<Mitglied>();
+
+        public Uebersicht(List<Mitglied> mitglieder_liste)
         {
             InitializeComponent();
+            this.mitgliederliste = mitglieder_liste;
+            update_grid(mitgliederliste);
+        }
+
+        private void update_grid(List<Mitglied> mitgliederliste)
+        {
+            PersonenDatenGrid.ItemsSource = mitgliederliste;
+        }
+
+        private void TextBox_Search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox searchBox = sender as TextBox;
+            string filter_wort = searchBox.Text.Trim().ToLower();
+            List<Mitglied> filtered_list = new List<Mitglied>();
+
+            if (filter_wort == "")
+            {
+                update_grid(mitgliederliste);
+                return;
+            }
+
+            //alle mitglieder durchsuchen
+            foreach (Mitglied m in mitgliederliste)
+            {
+                //ignoriere Großschreibung
+                string name = m.vorname.ToLower() + " " + m.nachname.ToLower();
+                if (name.Contains(filter_wort))
+                {
+                    filtered_list.Add(m);
+                }
+            }
+            update_grid(filtered_list);
         }
     }
 }
