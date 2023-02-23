@@ -42,7 +42,7 @@
         <TextBox x:Name="E_Mail" HorizontalAlignment="Left" Margin="89,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" Height="23" TextChanged="TextBox_TextChanged" Grid.Row="1"/>
         <TextBox x:Name="Beitrittsdatum" HorizontalAlignment="Left" Margin="415,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" Height="23" TextChanged="TextBox_TextChanged"/>
         <TextBox HorizontalAlignment="Left" Margin="318,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="311" Height="96" Grid.Row="1"/>
-        <Button x:Name="Hinzufuegen_Button" Content="Hinzufügen" HorizontalAlignment="Left" Margin="524,129,0,0" VerticalAlignment="Top" Width="110" Height="23" RenderTransformOrigin="0.4,-0.737" Grid.Row="1"/>
+        <Button x:Name="btn_hinzufuegen" Content="Hinzufügen" HorizontalAlignment="Left" Margin="524,129,0,0" VerticalAlignment="Top" Width="110" Height="23" RenderTransformOrigin="0.4,-0.737" Grid.Row="1" Click="btn_hinzufuegen_Click" />
         <ComboBox x:Name="Mitgliedschaftskategorie" HorizontalAlignment="Left" Margin="479,71,0,0" VerticalAlignment="Top" Width="136" Height="26"/>
         <ComboBox x:Name="Bezahlmethode" HorizontalAlignment="Left" Margin="427,110,0,0" VerticalAlignment="Top" Width="136" Height="26"/>
 

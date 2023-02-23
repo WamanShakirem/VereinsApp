@@ -19,12 +19,20 @@ namespace VereinsApp
     /// </summary>
     public partial class Hinzufuegen : Window
     {
-        public Hinzufuegen()
+        private List<Mitglied> mitgliederliste = new List<Mitglied>();
+
+        public Hinzufuegen(List<Mitglied> mitgliederliste)
         {
             InitializeComponent();
+            this.mitgliederliste = mitgliederliste;
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        }
+
+        private void btn_hinzufuegen_Click(object sender, RoutedEventArgs e)
         {
 
         }

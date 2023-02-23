@@ -24,12 +24,20 @@ namespace VereinsApp
     public partial class MainWindow : Window
     {
         private SqlConnection Datenbankverbindung = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\schwa\OneDrive\Dokumente\VereinsApp.mdf;Integrated Security = True; Connect Timeout = 5");
-
+        private List<Mitglied> mitgliederliste = new List<Mitglied>();
 
         public MainWindow()
         {
             InitializeComponent();
 
+            Los.Click += SearchButton_Click;
+
+            load_database();
+            update_grid(mitgliederliste);
+        }
+
+        private void load_database()
+        {
             //Datenbankverbindung herstellen
             Datenbankverbindung.Open();
 
@@ -38,17 +46,64 @@ namespace VereinsApp
 
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
-
-            PersonenDatenGrid.DataContext = dataSet;
-            PersonenDatenGrid.ItemsSource = dataSet.Tables[0].DefaultView;
-
+            
+            //jede datanbank row zu einem objekt der Klasse Mitglied umwandeln
+            foreach(DataRow row in dataSet.Tables[0].Rows) {
+                Mitglied m = new Mitglied(row);
+                mitgliederliste.Add(m);
+            }
 
             Datenbankverbindung.Close();
         }
+        
+        private void update_grid(List<Mitglied> mitgliederliste) {
+            PersonenDatenGrid.ItemsSource = mitgliederliste;
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        }
+
+        private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            TextBox searchBox = sender as TextBox;
+            string filter_wort = searchBox.Text.Trim().ToLower();
+            List<Mitglied> filtered_list = new List<Mitglied>();
 
+            if(filter_wort == "") {
+                update_grid(mitgliederliste);
+                return;
+            }
+
+            //alle mitglieder durchsuchen
+            foreach(Mitglied m in mitgliederliste ) {
+                //ignoriere Großschreibung
+                string name = m.vorname.ToLower() + " " + m.nachname.ToLower();
+                if(name.Contains(filter_wort)) {
+                    filtered_list.Add(m);
+                }
+            }
+            update_grid(filtered_list);
+        }
+
+        //Neues Fenster wird geöffnet um ein neues Mitglied hinzufügen zu können.
+        private void btn_add_mitglied_Click(object sender, RoutedEventArgs e)
+        {
+            Hinzufuegen window = new Hinzufuegen(mitgliederliste);
+            window.Show();
+        }
+
+        
+        private void btn_change_mitglied_Click(object sender, RoutedEventArgs e)
+        {
+          
+        }
+        
+        private void btn_delete_mitglied_Click(object sender, RoutedEventArgs e)
+        {
+          
+        }
+        
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
