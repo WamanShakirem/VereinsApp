@@ -22,6 +22,9 @@ namespace VereinsApp
         [DisplayName("Geburtsdatum")]
         public DateTime geburtsdatum { get; set; }
 
+        [DisplayName("Adresse")]
+        public string adresse { get; set; }
+
         [DisplayName("Alter")]
         public int alter { get { return DateTime.Today.Year - geburtsdatum.Year; } }
 
@@ -49,11 +52,12 @@ namespace VereinsApp
         [DisplayName("Notiz")]
         public string notiz { get; set; }
 
-        public Mitglied(string vorname, string nachname, DateTime geburtsdatum, int plz, string ort, string tel, string email, DateTime beitrittsdatum, string mitgliedschaftskategorie, string bezahlmethode, string notiz)
+        public Mitglied(string vorname, string nachname, DateTime geburtsdatum, string adresse, int plz, string ort, string tel, string email, DateTime beitrittsdatum, string mitgliedschaftskategorie, string bezahlmethode, string notiz)
         {
             this.vorname = vorname;
             this.nachname = nachname;
             this.geburtsdatum = geburtsdatum;
+            this.adresse = adresse;
             this.plz = plz;
             this.ort = ort;
             this.tel = tel;
@@ -69,6 +73,7 @@ namespace VereinsApp
             this.vorname = (string)row["Vorname"];
             this.nachname = (string)row["Nachname"];
             this.geburtsdatum = (DateTime)row["Geburtsdatum"];
+            this.adresse = (string)row["Adresse"];
             this.plz = (int)row["PLZ"];
             this.ort = (string)row["Ort"];
             this.tel = (string)row["Telefon"];
