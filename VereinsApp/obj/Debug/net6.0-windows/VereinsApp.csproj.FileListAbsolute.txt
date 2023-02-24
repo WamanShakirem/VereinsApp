@@ -32,3 +32,5 @@ C:\Users\schwa\OneDrive\Desktop\RepoVereinsApp\VereinsApp\bin\Debug\net6.0-windo
 C:\Users\schwa\OneDrive\Desktop\RepoVereinsApp\VereinsApp\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\schwa\OneDrive\Desktop\RepoVereinsApp\VereinsApp\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\schwa\OneDrive\Desktop\RepoVereinsApp\VereinsApp\obj\Debug\net6.0-windows\VereinsApp.csproj.CopyComplete
+C:\Users\schwa\OneDrive\Desktop\RepoVereinsApp\VereinsApp\obj\Debug\net6.0-windows\E-Mail.g.cs
+C:\Users\schwa\OneDrive\Desktop\RepoVereinsApp\VereinsApp\obj\Debug\net6.0-windows\E-Mail.baml

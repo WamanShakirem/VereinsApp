@@ -22,5 +22,6 @@
         <Button  x:Name="btn_dele_mitglied" Content="Mitglied löschen" HorizontalAlignment="Left" Margin="406,313,0,0" VerticalAlignment="Top" Width="165" Click="btn_del_Click" Height="40"/>
         <Label Name="Suchen" Content="Suchen" HorizontalAlignment="Left" Margin="547,16,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.053,-8.704"/>
         <Button x:Name="btn_uebersicht" Content="Übersicht" HorizontalAlignment="Left" Margin="570,313,0,0" VerticalAlignment="Top" Width="122" Height="40" Click="btn_uebersicht_Click"/>
+        <Button x:Name="btn_email_senden" Content="E-Mail senden" HorizontalAlignment="Left" Margin="305,361,0,0" VerticalAlignment="Top" Width="165" Click="btn_email_senden_Click" Height="40"/>
     </Grid>
 </Window>

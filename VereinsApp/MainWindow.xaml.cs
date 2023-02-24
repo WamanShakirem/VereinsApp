@@ -105,5 +105,11 @@ namespace VereinsApp
         {
 
         }
+
+        private void btn_email_senden_Click(object sender, RoutedEventArgs e)
+        {
+            E_Mail window = new E_Mail();
+            window.Show();
+        }
     }
 }
