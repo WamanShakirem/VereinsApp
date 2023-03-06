@@ -44,7 +44,7 @@ namespace VereinsApp
         public DateTime beitrittsdatum { get; set; }
 
         [DisplayName("Mitgliedschaftskategorie")]
-        public string mitgliedschaftskategorie { get; set;}
+        public string mitgliedschaftskategorie { get; set; }
 
         [DisplayName("Bezahlmethode")]
         public string bezahlmethode { get; set; }
@@ -52,7 +52,11 @@ namespace VereinsApp
         [DisplayName("Notiz")]
         public string notiz { get; set; }
 
-        public Mitglied(string vorname, string nachname, DateTime geburtsdatum, string adresse, int plz, string ort, string tel, string email, DateTime beitrittsdatum, string mitgliedschaftskategorie, string bezahlmethode, string notiz)
+        [DisplayName("Bezahlt")]
+
+        public string bezahlt { get; set; }
+
+        public Mitglied(string vorname, string nachname, DateTime geburtsdatum, string adresse, int plz, string ort, string tel, string email, DateTime beitrittsdatum, string mitgliedschaftskategorie, string bezahlmethode, string notiz, string bezahlt)
         {
             this.vorname = vorname;
             this.nachname = nachname;
@@ -66,6 +70,7 @@ namespace VereinsApp
             this.mitgliedschaftskategorie = mitgliedschaftskategorie;
             this.bezahlmethode = bezahlmethode;
             this.notiz = notiz;
+            this.bezahlt = bezahlt;
         }
 
         public Mitglied(DataRow row)

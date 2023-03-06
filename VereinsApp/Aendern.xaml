@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VereinsApp"
         mc:Ignorable="d"
-        Title="Aendern" Height="450" Width="800">
+        Title="Aendern" Height="450" Width="930">
     <Grid>
         <Label Content="Vorname" HorizontalAlignment="Left" Margin="35,38,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.373,-2.461" FontSize="14"/>
         <Label Content="Nachname" HorizontalAlignment="Left" Margin="33,73,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.373,-2.461" FontSize="14"/>
@@ -41,5 +41,10 @@
         <Label Content="PLZ" Margin="33,182,715,0" VerticalAlignment="Top" RenderTransformOrigin="-0.373,-2.461" FontSize="14"/>
         <Label Content="Ort" Margin="33,210,720,0" VerticalAlignment="Top" RenderTransformOrigin="-0.373,-2.461" FontSize="14"/>
         <Label Content="Tel.:" Margin="34,247,709,0" VerticalAlignment="Top" RenderTransformOrigin="-0.373,-2.461" FontSize="14"/>
+        <DataGrid x:Name="Vermerksliste" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="639,26,0,193" SelectionChanged="Vermerksliste_SelectionChanged" HeadersVisibility="Column"/>
+        <Button x:Name="Bezahldatum_Add_Button" Content="Bezahldatum hinzufügen" HorizontalAlignment="Left" Margin="777,259,0,0" VerticalAlignment="Top" Height="25" Width="142" Click="Bezahldatum_Add_Button_Click"/>
+        <Button x:Name="Bezahldatum_Bearbeiten_Button" Content="Bezahldatum bearbeiten" HorizontalAlignment="Left" Margin="713,295,0,0" VerticalAlignment="Top" Height="25" Width="142" Click="Bezahldatum_Bearbeiten_Button_Click"/>
+        <Button x:Name="Bezahldatum_Loeschen_Button" Content="Bezahldatum löschen" HorizontalAlignment="Left" Margin="713,331,0,0" VerticalAlignment="Top" Height="25" Width="142" Click="Bezahldatum_Loeschen_Button_Click"/>
+        <TextBox x:Name="BezahlDatumTextBox" HorizontalAlignment="Left" Margin="643,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

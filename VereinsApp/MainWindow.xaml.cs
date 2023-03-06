@@ -85,12 +85,15 @@ namespace VereinsApp
         {
             Hinzufuegen window = new Hinzufuegen(mitgliederliste);
             window.Show();
+
+
         }
 
         
         private void btn_change_mitglied_Click(object sender, RoutedEventArgs e)
         {
-            Aendern window = new Aendern();
+            DataSet dataSet = new DataSet();
+            Aendern window = new Aendern(dataSet);
             window.Show();
         }
 
