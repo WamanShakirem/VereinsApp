@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Security.Cryptography.Xml;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace VereinsApp
 {
@@ -72,7 +73,7 @@ namespace VereinsApp
                 MessageBox.Show("Bitte trage das Bezahlsdatum ein!");
                 return;
             }
-
+            //Speichern von Datum
             DateTime bezahlDatum = DateTime.Parse(BezahlDatumTextBox.Text);
 
             string query = string.Format("insert into Vermerksliste (Bezahldatum) values('{0}')", bezahlDatum);
@@ -83,7 +84,19 @@ namespace VereinsApp
 
         private void Bezahldatum_Bearbeiten_Button_Click(object sender, RoutedEventArgs e)
         {
+            if (lastSelectedVermerksliste == null)
+            {
+                MessageBox.Show("Bitte wähle zuerst ein Element aus.");
+                return;
+            }
 
+            DateTime bezahlDatum = DateTime.Parse(BezahlDatumTextBox.Text);
+            int id = Convert.ToInt32(lastSelectedVermerksliste["Id"]);
+
+            string query = string.Format("update Vermerksliste set Bezahldatum='{0}' where Id={1}", bezahlDatum, id);
+            ExecuteQuery(query);
+
+            update_grid();
         }
 
         private void Bezahldatum_Loeschen_Button_Click(object sender, RoutedEventArgs e)
