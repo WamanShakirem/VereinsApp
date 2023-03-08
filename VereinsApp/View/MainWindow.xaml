@@ -1,0 +1,28 @@
+﻿<Window x:Class="VereinsApp.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VereinsApp.View"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="550" Width="1000" MinHeight="550" MinWidth="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="500"/>
+        </Grid.RowDefinitions>
+        <UniformGrid Grid.Row="0" Rows="1">
+            <UniformGrid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="FontSize" Value="20"/>
+                </Style>
+            </UniformGrid.Resources>
+            <Button x:Name="BtnOverview"   Content="Mitglieder" Tag="0" Click="Menu_Click"/>
+            <Button x:Name="BtnEmail"      Content="E-Mail"     Tag="1" Click="Menu_Click"/>
+            <Button x:Name="BtnStatistic"  Content="Statistik"  Tag="3" Click="Menu_Click"/>
+        </UniformGrid>
+
+        <Frame Grid.Row="1" NavigationUIVisibility="Hidden" Content="{Binding CurrentPage}" />
+    </Grid>
+</Window>

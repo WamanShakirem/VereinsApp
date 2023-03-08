@@ -1,0 +1,40 @@
+﻿<Window x:Class="VereinsApp.View.HinzufuegenWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VereinsApp.View"
+        mc:Ignorable="d"
+        Title="HinzufuegenWindow"
+        Height="650" Width="600" MinHeight="500" MinWidth="600"
+>
+    <Grid >
+        <StackPanel Width="500">
+            <Label Content="Vorname"/>
+            <TextBox />
+            <Label Content="Nachname"/>
+            <TextBox  />
+            <Label Content="Geburtsdatum"/>
+            <TextBox  />
+            <Label Content="Adresse"/>
+            <TextBox  />
+            <Label Content="Plz"/>
+            <TextBox  />
+            <Label Content="Ort"/>
+            <TextBox  />
+            <Label Content="Telefon"/>
+            <TextBox  />
+            <Label Content="E-Mail"/>
+            <TextBox  />
+            <Label Content="Beitrittsdatum"/>
+            <TextBox  />
+            <Label Content="Mitgliedschaftskategorie"/>
+            <ComboBox   />
+            <Label Content="Bezahlmethode"/>
+            <ComboBox   />
+            <Label Content="Notiz"/>
+            <TextBox Height="60" />            
+            <Button Content="Speichern" Margin="20" Height="25"/>
+        </StackPanel>
+    </Grid>
+</Window>

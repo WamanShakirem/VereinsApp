@@ -197,7 +197,7 @@ namespace VereinsApp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/VereinsApp;component/aendern.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/VereinsApp;V1.0.0.0;component/aendern.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Aendern.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

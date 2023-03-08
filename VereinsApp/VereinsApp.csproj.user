@@ -19,6 +19,24 @@
     <Compile Update="Uebersicht.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\EmailSeite.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\HinzufuegenWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\MainWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\MitgliedDetailsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\StatistikSeite.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UebersichtSeite.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Aendern.xaml">
@@ -34,6 +52,24 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Uebersicht.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\EmailSeite.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\HinzufuegenWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\MitgliedDetailsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\StatistikSeite.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UebersichtSeite.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

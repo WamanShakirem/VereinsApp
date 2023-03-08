@@ -33,7 +33,11 @@ namespace VereinsApp
 
             Datenbankverbindung.Open();
 
-            string query = "select * from Vermerksliste";
+            string query = @"
+            SELECT * 
+            FROM Rechnung
+            WHERE MitgliedId = 1
+            ";
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, Datenbankverbindung);
 
             DataSet dataSet1 = new DataSet();

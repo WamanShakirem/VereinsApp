@@ -7,7 +7,7 @@ using System.Data;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace VereinsApp
+namespace VereinsApp.Model
 {
     public class Mitglied
     {
@@ -75,19 +75,19 @@ namespace VereinsApp
 
         public Mitglied(DataRow row)
         {
-            this.vorname = (string)row["Vorname"];
-            this.nachname = (string)row["Nachname"];
-            this.geburtsdatum = (DateTime)row["Geburtsdatum"];
-            this.adresse = (string)row["Adresse"];
-            this.plz = (int)row["PLZ"];
-            this.ort = (string)row["Ort"];
-            this.tel = (string)row["Telefon"];
-            this.email = (string)row["E-Mail"];
-            this.beitrittsdatum = (DateTime)row["Beitrittsdatum"];
-            this.mitgliedschaftskategorie =  (string)row["Mitgliedsschaftskategorie"];
-            this.bezahlmethode = (string)row["Bezahlmethode"];
-            this.notiz = (string)row["Notiz"];
+            vorname = (string)row["Vorname"];
+            nachname = (string)row["Nachname"];
+            geburtsdatum = (DateTime)row["Geburtsdatum"];
+            adresse = (string)row["Adresse"];
+            plz = (int)row["PLZ"];
+            ort = (string)row["Ort"];
+            tel = (string)row["Telefon"];
+            email = (string)row["E-Mail"];
+            beitrittsdatum = (DateTime)row["Beitrittsdatum"];
+            mitgliedschaftskategorie = (string)row["Mitgliedsschaftskategorie"];
+            bezahlmethode = (string)row["Bezahlmethode"];
+            notiz = (string)row["Notiz"];
         }
-        
+
     }
 }

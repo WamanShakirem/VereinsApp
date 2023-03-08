@@ -1,1 +1,1 @@
-﻿
+﻿INSERT INTO Rechnung (RechnungId, Bezahldatum, MitgliederId
