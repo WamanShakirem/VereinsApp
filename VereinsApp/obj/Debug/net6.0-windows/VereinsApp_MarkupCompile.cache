@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\schwa\OneDrive\Desktop\RepoVereinsApp\VereinsApp\App.xaml
-5273409288
+61511615820
 
-101410391961
+19-825170639
 195-1896769536
-Aendern.xaml;E-Mail.xaml;Hinzufuegen.xaml;MainWindow.xaml;Uebersicht.xaml;
+View\EmailSeite.xaml;View\HinzufuegenWindow.xaml;View\MainWindow.xaml;View\MitgliedDetailsWindow.xaml;View\StatistikSeite.xaml;View\UebersichtSeite.xaml;
 
 False
 

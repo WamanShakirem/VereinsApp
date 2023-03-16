@@ -13,7 +13,7 @@
                 <ColumnDefinition Width="400"/>
                 <ColumnDefinition Width="300"/>
             </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0" Margin="20">
+        <StackPanel Grid.Column="0" Margin="20,20,20,11" RenderTransformOrigin="0,0.5">
             <Label Content="Vorname"/>
             <TextBox />
             <Label Content="Nachname"/>
@@ -37,12 +37,41 @@
             <Label Content="Bezahlmethode"/>
             <ComboBox   />
             <Label Content="Notiz"/>
-            <TextBox Height="60" />            
-            <Button Content="Speichern" Margin="20" Height="25"/>
+            <TextBox Height="60" />
+            <Button Content="Speichern" Margin="10" Height="25" Width="122" RenderTransformOrigin="0,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="100" Y="0"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button Content="Exportieren" Height="25" Width="122" RenderTransformOrigin="0.5,0">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="100" Y="0"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
         </StackPanel>
         <StackPanel Grid.Column="1">
             <Label Content="Rechnungen"/>
             <DataGrid  d:ItemsSource="{d:SampleData ItemCount=5}"/>
+            <Button Content="Rechnung hinzufügen" Height="25" Width="122" RenderTransformOrigin="0.5,1">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="0" Y="6"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
         </StackPanel>
         
 

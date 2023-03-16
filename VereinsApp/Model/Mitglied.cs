@@ -11,82 +11,84 @@ namespace VereinsApp.Model
 {
     public class Mitglied
     {
-        private string test = "Test";
+        public int Id { get; set; }
 
+        //Test
         [DisplayName("Vorname")] //dies ändert den Namen der im datagrid angezeigt wird
-        public string vorname { get; set; }
+        public string Vorname { get; set; }
 
         [DisplayName("Nachname")]
-        public string nachname { get; set; }
+        public string Nachname { get; set; }
 
         [DisplayName("Geburtsdatum")]
-        public DateTime geburtsdatum { get; set; }
+        public DateTime Geburtsdatum { get; set; }
 
         [DisplayName("Adresse")]
-        public string adresse { get; set; }
+        public string Adresse { get; set; }
 
         [DisplayName("Alter")]
-        public int alter { get { return DateTime.Today.Year - geburtsdatum.Year; } }
+        public int Alter { get { return DateTime.Today.Year - Geburtsdatum.Year; } }
 
         [DisplayName("PLZ")]
-        public int plz { get; set; }
+        public int Plz { get; set; }
 
         [DisplayName("Ort")]
-        public string ort { get; set; }
+        public string Ort { get; set; }
 
         [DisplayName("Telefonnummer")]
-        public string tel { get; set; }
+        public string Tel { get; set; }
 
         [DisplayName("E-Mail")]
-        public string email { get; set; }
+        public string Email { get; set; }
 
         [DisplayName("Beitrittsdatum")]
-        public DateTime beitrittsdatum { get; set; }
+        public DateTime Beitrittsdatum { get; set; }
 
         [DisplayName("Mitgliedschaftskategorie")]
-        public string mitgliedschaftskategorie { get; set; }
+        public string Mitgliedschaftskategorie { get; set; }
 
         [DisplayName("Bezahlmethode")]
-        public string bezahlmethode { get; set; }
+        public string Bezahlmethode { get; set; }
 
         [DisplayName("Notiz")]
-        public string notiz { get; set; }
+        public string Notiz { get; set; }
 
         [DisplayName("Bezahlt")]
 
-        public string bezahlt { get; set; }
+        public string Bezahlt { get; set; }
 
         public Mitglied(string vorname, string nachname, DateTime geburtsdatum, string adresse, int plz, string ort, string tel, string email, DateTime beitrittsdatum, string mitgliedschaftskategorie, string bezahlmethode, string notiz, string bezahlt)
         {
-            this.vorname = vorname;
-            this.nachname = nachname;
-            this.geburtsdatum = geburtsdatum;
-            this.adresse = adresse;
-            this.plz = plz;
-            this.ort = ort;
-            this.tel = tel;
-            this.email = email;
-            this.beitrittsdatum = beitrittsdatum;
-            this.mitgliedschaftskategorie = mitgliedschaftskategorie;
-            this.bezahlmethode = bezahlmethode;
-            this.notiz = notiz;
-            this.bezahlt = bezahlt;
+            this.Vorname = vorname;
+            this.Nachname = nachname;
+            this.Geburtsdatum = geburtsdatum;
+            this.Adresse = adresse;
+            this.Plz = plz;
+            this.Ort = ort;
+            this.Tel = tel;
+            this.Email = email;
+            this.Beitrittsdatum = beitrittsdatum;
+            this.Mitgliedschaftskategorie = mitgliedschaftskategorie;
+            this.Bezahlmethode = bezahlmethode;
+            this.Notiz = notiz;
+            this.Bezahlt = bezahlt;
         }
 
         public Mitglied(DataRow row)
         {
-            vorname = (string)row["Vorname"];
-            nachname = (string)row["Nachname"];
-            geburtsdatum = (DateTime)row["Geburtsdatum"];
-            adresse = (string)row["Adresse"];
-            plz = (int)row["PLZ"];
-            ort = (string)row["Ort"];
-            tel = (string)row["Telefon"];
-            email = (string)row["E-Mail"];
-            beitrittsdatum = (DateTime)row["Beitrittsdatum"];
-            mitgliedschaftskategorie = (string)row["Mitgliedsschaftskategorie"];
-            bezahlmethode = (string)row["Bezahlmethode"];
-            notiz = (string)row["Notiz"];
+            Id = (int)row["Id"];
+            Vorname = (string)row["Vorname"];
+            Nachname = (string)row["Nachname"];
+            Geburtsdatum = (DateTime)row["Geburtsdatum"];
+            Adresse = (string)row["Adresse"];
+            Plz = (int)row["PLZ"];
+            Ort = (string)row["Ort"];
+            Tel = (string)row["Telefon"];
+            Email = (string)row["EMail"];
+            Beitrittsdatum = (DateTime)row["Beitrittsdatum"];
+            Mitgliedschaftskategorie = (string)row["Mitgliedschaftskategorie"];
+            Bezahlmethode = (string)row["Bezahlmethode"];
+            Notiz = (string)row["Notiz"];
         }
 
     }

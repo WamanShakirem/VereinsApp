@@ -69,7 +69,7 @@ namespace VereinsApp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/VereinsApp;component/uebersicht.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/VereinsApp;V1.0.0.0;component/uebersicht.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Uebersicht.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

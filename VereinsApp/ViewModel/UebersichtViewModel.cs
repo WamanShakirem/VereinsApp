@@ -8,5 +8,6 @@ namespace VereinsApp.ViewModel
 {
    public class UebersichtViewModel : BaseViewModel
     {
+
     }
 }

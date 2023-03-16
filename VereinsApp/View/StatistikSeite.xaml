@@ -9,6 +9,7 @@
       Title="StatistikSeite">
 
     <Grid>
-        
+        <Label Content="StatistikSeite" HorizontalAlignment="Left" Margin="346,200,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Page>

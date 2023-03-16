@@ -18,9 +18,9 @@
                     <Setter Property="FontSize" Value="20"/>
                 </Style>
             </UniformGrid.Resources>
-            <Button x:Name="BtnOverview"   Content="Mitglieder" Tag="0" Click="Menu_Click"/>
-            <Button x:Name="BtnEmail"      Content="E-Mail"     Tag="1" Click="Menu_Click"/>
-            <Button x:Name="BtnStatistic"  Content="Statistik"  Tag="3" Click="Menu_Click"/>
+            <Button x:Name="BtnOverview"   Content="Mitglieder" Tag="0" Command="{Binding SideMenuClickCommand}" CommandParameter="0"/>
+            <Button x:Name="BtnEmail"      Content="E-Mail"     Tag="1" Command="{Binding SideMenuClickCommand}" CommandParameter="1"/>
+            <Button x:Name="BtnStatistic"  Content="Statistik"  Tag="3" Command="{Binding SideMenuClickCommand}" CommandParameter="2"/>
         </UniformGrid>
 
         <Frame Grid.Row="1" NavigationUIVisibility="Hidden" Content="{Binding CurrentPage}" />

@@ -22,11 +22,11 @@ namespace VereinsApp.View
     {
         MainWindowViewModel viewModel;
         // Dem Fenster sein View Model übergeben.
-        public MainWindow(MainWindowViewModel viewModel)
+        public MainWindow()
         {
             InitializeComponent();
-            DataContext = viewModel; //hiermit ermöglicht man die Bindings
-            this.viewModel = viewModel; //viewmodel in dem Window speichern
+            this.viewModel = new MainWindowViewModel(); //viewmodel in dem Window speichern
+            DataContext = this.viewModel; //hiermit ermöglicht man die Bindings
         }
     }
 }

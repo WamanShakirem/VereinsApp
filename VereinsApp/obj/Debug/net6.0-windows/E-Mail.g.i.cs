@@ -53,7 +53,7 @@ namespace VereinsApp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/VereinsApp;component/e-mail.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/VereinsApp;V1.0.0.0;component/e-mail.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\E-Mail.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

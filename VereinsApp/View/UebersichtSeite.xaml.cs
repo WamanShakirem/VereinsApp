@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using VereinsApp.ViewModel;
 
 namespace VereinsApp.View
 {
@@ -20,9 +21,12 @@ namespace VereinsApp.View
     /// </summary>
     public partial class UebersichtSeite : Page
     {
+        UebersichtViewModel viewModel;
         public UebersichtSeite()
         {
             InitializeComponent();
+            this.viewModel = new UebersichtViewModel(); //viewmodel erstellen
+            DataContext = this.viewModel; //hiermit ermöglicht man die Bindings
         }
     }
 }
