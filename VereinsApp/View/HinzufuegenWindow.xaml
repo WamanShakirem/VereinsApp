@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:VereinsApp.View"
         mc:Ignorable="d"
         Title="HinzufuegenWindow"
-        Height="650" Width="600" MinHeight="500" MinWidth="600"
+        Height="700" Width="600" MinHeight="700" MinWidth="600"
 >
     <Grid >
         <StackPanel Width="500">

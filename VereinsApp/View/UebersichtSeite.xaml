@@ -25,17 +25,18 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0" Content="Suche"/>
-            <TextBox Background="White" Grid.Column="1"  >
+            <TextBox Background="White" Grid.Column="1" Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 <TextBox.Effect>
                     <DropShadowEffect/>
                 </TextBox.Effect>
             </TextBox>
 
-            <Button Grid.Column="2" Width="150" Content="Details" />
-            <Button Grid.Column="3" Width="150" Content="Hinzufügen" />
-            <Button Grid.Column="4" Width="150" Content="Löschen" />
+            <Button Grid.Column="2" Width="150" Content="Details" Command="{Binding DetailButtonClickCommand}"/>
+            <Button Grid.Column="3" Width="150" Content="Hinzufügen" Command="{Binding AddButtonClickCommand}"/>
+            <Button Grid.Column="4" Width="150" Content="Löschen" Command="{Binding DeleteButtonClickCommand}"/>
         </Grid>
-        
-        <DataGrid Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=25}"/>
+        <!-- Hier werden die Mitglieder in das Datagrid geladen(Binding) -->
+        <DataGrid Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=25}" ItemsSource="{Binding MitgliederListe}"
+            SelectedItem="{Binding SelectedMitglied}"/>
     </Grid>
 </Page>
