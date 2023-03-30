@@ -6,39 +6,63 @@
         xmlns:local="clr-namespace:VereinsApp.View"
         mc:Ignorable="d"
         Title="MitgliedDetailsWindow" 
-        Height="700" Width="700" MinHeight="500" MinWidth="700"
+        MinHeight="800" MinWidth="700" Width="600" Height="800"
 >
     <Grid>
         <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="400"/>
-                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="200"/>
             </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" Margin="20,20,20,11" RenderTransformOrigin="0,0.5">
             <Label Content="Vorname"/>
-            <TextBox />
+            <TextBox Text="{Binding Path=SelectedMitglied.Vorname}"/>
             <Label Content="Nachname"/>
-            <TextBox  />
+            <TextBox  Text="{Binding Path=SelectedMitglied.Nachname}"/>
+            <Label Content="Geschlecht"/>
+            <ComboBox SelectedValue="{Binding Path=SelectedMitglied.Geschlecht, Mode=TwoWay}"
+                        SelectedValuePath="Content">
+                <ComboBoxItem Content="Männlich" />
+                <ComboBoxItem Content="Weiblich" />
+                <ComboBoxItem Content="Divers" />
+            </ComboBox>
             <Label Content="Geburtsdatum"/>
-            <TextBox  />
+            <DatePicker
+                DisplayDate="{Binding Path=SelectedMitglied.Geburtsdatum , Mode=TwoWay}"
+                SelectedDate="{Binding Path=SelectedMitglied.Geburtsdatum, Mode=TwoWay}"
+            />
             <Label Content="Adresse"/>
-            <TextBox  />
+            <TextBox  Text="{Binding Path=SelectedMitglied.Adresse}"/>
             <Label Content="Plz"/>
-            <TextBox  />
+            <TextBox  Text="{Binding Path=SelectedMitglied.Plz}"/>
             <Label Content="Ort"/>
-            <TextBox  />
+            <TextBox  Text="{Binding Path=SelectedMitglied.Ort}"/>
             <Label Content="Telefon"/>
-            <TextBox  />
+            <TextBox  Text="{Binding Path=SelectedMitglied.Telefonnummer}"/>
             <Label Content="E-Mail"/>
-            <TextBox  />
+            <TextBox  Text="{Binding Path=SelectedMitglied.Email}"/>
             <Label Content="Beitrittsdatum"/>
-            <TextBox  />
+            <DatePicker
+                DisplayDate="{Binding Path=SelectedMitglied.Beitrittsdatum , Mode=TwoWay}"
+                SelectedDate="{Binding Path=SelectedMitglied.Beitrittsdatum, Mode=TwoWay}"
+            />
             <Label Content="Mitgliedschaftskategorie"/>
-            <ComboBox   />
+            <ComboBox SelectedValue="{Binding Path=SelectedMitglied.Mitgliedschaftskategorie, Mode=TwoWay}"
+                        SelectedValuePath="Content">
+                <ComboBoxItem Content="Monatlich" />
+                <ComboBoxItem Content="Halbjährlich" />
+                <ComboBoxItem Content="Jährlich" />
+            </ComboBox>
             <Label Content="Bezahlmethode"/>
-            <ComboBox   />
+                        <ComboBox SelectedValue="{Binding Path=SelectedMitglied.Bezahlmethode, Mode=TwoWay}"
+                        SelectedValuePath="Content">
+                <ComboBoxItem Content="Bar" />
+                <ComboBoxItem Content="Bankeinzug" />
+                <ComboBoxItem Content="Paypal" />
+                <ComboBoxItem Content="Kreditkarte" />
+            </ComboBox>
             <Label Content="Notiz"/>
-            <TextBox Height="60" />
-            <Button Content="Speichern" Margin="10" Height="25" Width="122" RenderTransformOrigin="0,0.5">
+            <TextBox Height="60" Text="{Binding Path=SelectedMitglied.Notiz}"/>
+            <Button Content="Speichern" Command="{Binding SpeichernClickCommand}" Margin="10" Height="25" Width="122" RenderTransformOrigin="0,0.5">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -61,7 +85,7 @@
         </StackPanel>
         <StackPanel Grid.Column="1">
             <Label Content="Rechnungen"/>
-            <DataGrid  d:ItemsSource="{d:SampleData ItemCount=5}"/>
+            <DataGrid  d:ItemsSource="{d:SampleData ItemCount=5}" ItemsSource="{Binding SelectedMitglied.RechnungListe}"/>
             <Button Content="Rechnung hinzufügen" Height="25" Width="122" RenderTransformOrigin="0.5,1">
                 <Button.RenderTransform>
                     <TransformGroup>

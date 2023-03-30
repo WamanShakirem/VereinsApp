@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using VereinsApp.ViewModel;
 
 namespace VereinsApp.View
 {
@@ -22,6 +23,7 @@ namespace VereinsApp.View
         public HinzufuegenWindow()
         {
             InitializeComponent();
+            DataContext = new HinzufuegenViewModel();
         }
 
     }

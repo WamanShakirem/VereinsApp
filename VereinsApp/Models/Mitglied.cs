@@ -14,11 +14,14 @@ namespace VereinsApp.Models
         public int Id { get; set; }
 
         //Test
-        [DisplayName("Vorname")] //dies ändert den Namen der im datagrid angezeigt wird
+        [DisplayName("Vorname")] //Dies ändert den Namen der im Datagrid angezeigt wird
         public string Vorname { get; set; }
 
         [DisplayName("Nachname")]
         public string Nachname { get; set; }
+
+        [DisplayName("Geschlecht")]
+        public string Geschlecht { get; set; }
 
         [DisplayName("Geburtsdatum")]
         public DateTime Geburtsdatum { get; set; }
@@ -53,11 +56,14 @@ namespace VereinsApp.Models
         [DisplayName("Notiz")]
         public string Notiz { get; set; }
 
+        public List<Rechnung> RechnungListe { get; set; }
 
-        public Mitglied(string vorname, string nachname, DateTime geburtsdatum, string adresse, int plz, string ort, string tel, string email, DateTime beitrittsdatum, string mitgliedschaftskategorie, string bezahlmethode, string notiz)
+
+        public Mitglied(string vorname, string nachname, string geschlecht, DateTime geburtsdatum, string adresse, int plz, string ort, string tel, string email, DateTime beitrittsdatum, string mitgliedschaftskategorie, string bezahlmethode, string notiz)
         {
             this.Vorname = vorname;
             this.Nachname = nachname;
+            this.Geschlecht = geschlecht;
             this.Geburtsdatum = geburtsdatum;
             this.Adresse = adresse;
             this.Plz = plz;
@@ -69,8 +75,7 @@ namespace VereinsApp.Models
             this.Bezahlmethode = bezahlmethode;
             this.Notiz = notiz;
         }
-
-        //Leerer Konstruktor um "Fake" Objekte zu erstellen. Wird im Datenbankcontroller genutzt um Objekte zu löschen.
+        
         public Mitglied(){}
 
 

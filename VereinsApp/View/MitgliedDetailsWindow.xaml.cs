@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using VereinsApp.Models;
+using VereinsApp.ViewModel;
 
 namespace VereinsApp.View
 {
@@ -19,9 +21,13 @@ namespace VereinsApp.View
     /// </summary>
     public partial class MitgliedDetailsWindow : Window
     {
-        public MitgliedDetailsWindow()
+        MitgliedDetailsViewModel viewModel;
+
+        public MitgliedDetailsWindow(Mitglied SelectedMitglied)
         {
             InitializeComponent();
+            this.viewModel = new MitgliedDetailsViewModel(SelectedMitglied); //viewmodel erstellen
+            DataContext = this.viewModel; //hiermit ermöglicht man die Bindings
         }
 
 

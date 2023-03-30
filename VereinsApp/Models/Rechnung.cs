@@ -20,6 +20,7 @@ namespace VereinsApp.Models
 
         [DisplayName("MitgliedId")]
         public int MitgliedId { get; set; }
+        public Mitglied Mitglied { get; set; }
 
         public Rechnung(DateTime Bezahldatum, double Betrag, int MitgliedId)
         {
@@ -28,7 +29,6 @@ namespace VereinsApp.Models
             this.MitgliedId = MitgliedId;
         }
         
-        //Leerer Konstruktor um "Fake" Objekte zu erstellen. Wird im Datenbankcontroller genutzt um Objekte zu löschen.
         public Rechnung(){}
     }
 

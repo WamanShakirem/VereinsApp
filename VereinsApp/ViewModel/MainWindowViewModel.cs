@@ -24,11 +24,11 @@ namespace VereinsApp.ViewModel
             set
             {
                 _currentPage = value;
-                OnPropertyChanged(nameof(CurrentPage)); // gui wird benachrichtigt
+                OnPropertyChanged(nameof(CurrentPage)); // Gui wird benachrichtigt
             }
         }
 
-        //Command erstellen für binding, gui bindet sich an dieses Command
+        //Command erstellen für Binding, gui bindet sich an dieses Command
         public ICommand SideMenuClickCommand { get; private set; }
 
         public MainWindowViewModel()
@@ -45,11 +45,11 @@ namespace VereinsApp.ViewModel
             CurrentPage = pages[0];
         }
 
-        //wird durch command aufgerufen
-        //object obj ist der CommandParamter aus der view.xaml
+        //Wird durch Command aufgerufen
+        //Object obj ist der CommandParamter aus der View.xaml
         private void SideMenuClick(object obj)
         {
-            string s = (string)obj; //object zu string umwandeln
+            string s = (string)obj; //Object zu String umwandeln
             int index = int.Parse(s);
 
             //Wird in Ausgabe angezeigt weil es keine Konsole gibt geht Console.WriteLine nicht

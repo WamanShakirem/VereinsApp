@@ -6,35 +6,59 @@
         xmlns:local="clr-namespace:VereinsApp.View"
         mc:Ignorable="d"
         Title="HinzufuegenWindow"
-        Height="700" Width="600" MinHeight="700" MinWidth="600"
+        Height="800" Width="600" MinHeight="800" MinWidth="600"
 >
     <Grid >
         <StackPanel Width="500">
             <Label Content="Vorname"/>
-            <TextBox />
+            <TextBox Text="{Binding Path=Vorname, Mode=TwoWay}"/>
             <Label Content="Nachname"/>
-            <TextBox  />
+            <TextBox  Text="{Binding Path=Nachname, Mode=TwoWay}"/>
+            <Label Content="Geschlecht"/>
+            <ComboBox SelectedValue="{Binding Path=Geschlecht, Mode=TwoWay}"
+                        SelectedValuePath="Content">
+                <ComboBoxItem Content="Männlich" />
+                <ComboBoxItem Content="Weiblich" />
+                <ComboBoxItem Content="Divers" />
+            </ComboBox>
             <Label Content="Geburtsdatum"/>
-            <TextBox  />
+            <DatePicker
+                DisplayDate="{Binding Path=Geburtsdatum , Mode=TwoWay}"
+                SelectedDate="{Binding Path=Geburtsdatum, Mode=TwoWay}"
+            />
             <Label Content="Adresse"/>
-            <TextBox  />
+            <TextBox  Text="{Binding Path=Adresse}"/>
             <Label Content="Plz"/>
-            <TextBox  />
+            <TextBox  Text="{Binding Path=Plz}"/>
             <Label Content="Ort"/>
-            <TextBox  />
+            <TextBox  Text="{Binding Path=Ort}"/>
             <Label Content="Telefon"/>
-            <TextBox  />
+            <TextBox  Text="{Binding Path=Telefonnummer}"/>
             <Label Content="E-Mail"/>
-            <TextBox  />
+            <TextBox  Text="{Binding Path=Email}"/>
             <Label Content="Beitrittsdatum"/>
-            <TextBox  />
+            <DatePicker
+                DisplayDate="{Binding Path=Beitrittsdatum , Mode=TwoWay}"
+                SelectedDate="{Binding Path=Beitrittsdatum, Mode=TwoWay}"
+            />
             <Label Content="Mitgliedschaftskategorie"/>
-            <ComboBox   />
+            <ComboBox SelectedValue="{Binding Path=Mitgliedschaftskategorie, Mode=TwoWay}"
+                        SelectedValuePath="Content">
+                <ComboBoxItem Content="Monatlich" />
+                <ComboBoxItem Content="Halbjährlich" />
+                <ComboBoxItem Content="Jährlich" />
+            </ComboBox>
             <Label Content="Bezahlmethode"/>
-            <ComboBox   />
+                        <ComboBox SelectedValue="{Binding Path=Bezahlmethode, Mode=TwoWay}"
+                        SelectedValuePath="Content">
+                <ComboBoxItem Content="Bar" />
+                <ComboBoxItem Content="Bankeinzug" />
+                <ComboBoxItem Content="Paypal" />
+                <ComboBoxItem Content="Kreditkarte" />
+            </ComboBox>
             <Label Content="Notiz"/>
-            <TextBox Height="60" />            
-            <Button Content="Speichern" Margin="20" Height="25"/>
+            <TextBox Height="60" Text="{Binding Path=Notiz}"/>
+            <Button Content="Hinzufügen" Margin="20" Height="25" Command="{Binding AddClickCommand}"/>
         </StackPanel>
     </Grid>
 </Window>

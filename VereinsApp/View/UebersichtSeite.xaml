@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Background="White"
-      Title="UebersichtSeite"
+      Title="UebersichtSeite" Language="de-at"
       Height="500" Width="1000" MinHeight="500" MinWidth="1000"
 >
 
