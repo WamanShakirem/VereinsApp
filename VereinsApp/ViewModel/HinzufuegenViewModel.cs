@@ -62,6 +62,7 @@ namespace VereinsApp.ViewModel
             else
             {
                 model.AddMitglied(Vorname, Nachname, Geschlecht, Geburtsdatum.Value, Adresse, Plz.Value, Ort, Telefonnummer, Email, Beitrittsdatum.Value, Mitgliedschaftskategorie, Bezahlmethode, Notiz);
+                
             }
 
         }

@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:VereinsApp.View"
         mc:Ignorable="d"
         Title="MitgliedDetailsWindow" 
-        MinHeight="800" MinWidth="700" Width="600" Height="800"
+        MinHeight="800" MinWidth="700" Width="700" Height="800"
 >
     <Grid>
         <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="400"/>
-                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="300"/>
             </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0" Margin="20,20,20,11" RenderTransformOrigin="0,0.5">
+        <StackPanel Grid.Column="0" Margin="20,20,20,10">
             <Label Content="Vorname"/>
             <TextBox Text="{Binding Path=SelectedMitglied.Vorname}"/>
             <Label Content="Nachname"/>
@@ -83,21 +83,34 @@
                 </Button.RenderTransform>
             </Button>
         </StackPanel>
-        <StackPanel Grid.Column="1">
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center">
             <Label Content="Rechnungen"/>
-            <DataGrid  d:ItemsSource="{d:SampleData ItemCount=5}" ItemsSource="{Binding SelectedMitglied.RechnungListe}"/>
-            <Button Content="Rechnung hinzufügen" Height="25" Width="122" RenderTransformOrigin="0.5,1">
-                <Button.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform X="0" Y="6"/>
-                    </TransformGroup>
-                </Button.RenderTransform>
-            </Button>
+            <DataGrid MaxHeight="400" d:ItemsSource="{d:SampleData ItemCount=5}" SelectedItem="{Binding SelectedRechnung}" ItemsSource="{Binding SelectedMitglied.RechnungListe, Mode=TwoWay}" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                    <DataGridTextColumn Header="Datum" Binding="{Binding Bezahldatum}"/>
+                    <DataGridTextColumn Header="Betrag" Binding="{Binding Betrag}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Content="Rechnung löschen" Command="{Binding DeleteRechnungClickCommand}" Margin="20,20,20,20"/>
+            <Border Margin="20,20,20,20"
+            BorderBrush="Black" BorderThickness="1"> 
+                <StackPanel Margin="10,10,10,10"> 
+                    <Label Content="Neue Rechnung" Margin="00,10,10,10"/>                    
+                    <Label Content="Bezahldatum"/>
+                    <DatePicker
+                        SelectedDate="{Binding Path=BezahldatumNeu , Mode=TwoWay}"
+                    />
+                    <Label Content="Betrag"/>
+                    <TextBox Text="{Binding Path=BetragNeu}"/>
+
+                    <Button Content="Rechnung hinzufügen" Command="{Binding RechnungAddClickCommand}" Height="25" Width="122" Margin="20,20,20,20"/>            
+                </StackPanel>
+            
+            </Border>
         </StackPanel>
         
 
     </Grid>
+ 
 </Window>

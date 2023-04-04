@@ -31,28 +31,39 @@ namespace VereinsApp.Models
             return this.MitgliederListe;
         }
 
+        public Mitglied? GetMitglied(int Id)
+        {
+            return dbSteuerung.GetMitglied(Id);
+        }
+
         public void DeleteMitglied(int id)
         {
             dbSteuerung.DeleteMitglied(id);
-            MitgliederListe = dbSteuerung.LoadMitglieder();
+            Reload();
+        }
+
+        public void DeleteRechnung(int id)
+        {
+            dbSteuerung.DeleteRechnung(id);
+            Reload();
         }
 
         public void UpdateMitglied(Mitglied m) // Das veränderte Mitglied wird an die dbSteuerung weitergegeben(gespeichert).
         {
             dbSteuerung.UpdateMitglied(m);
-            MitgliederListe = dbSteuerung.LoadMitglieder();
+            Reload();
         }
 
         public void AddMitglied(string vorname, string nachname, string geschlecht, DateTime geburtsdatum, string adresse, int plz, string ort, string tel, string email, DateTime beitrittsdatum, string mitgliedschaftskategorie, string bezahlmethode, string notiz)
         {
             dbSteuerung.AddMitglied(vorname, nachname, geschlecht, geburtsdatum, adresse, plz, ort, tel, email, beitrittsdatum, mitgliedschaftskategorie, bezahlmethode, notiz);
-            MitgliederListe = dbSteuerung.LoadMitglieder();
+            Reload();
         }
 
         public void AddRechnung(DateTime Bezahldatum, float Betrag, int MitgliedId)
         {
             dbSteuerung.AddRechnung(Bezahldatum, Betrag, MitgliedId);
-            RechnungListe = dbSteuerung.LoadRechnungen();
+            Reload();
         }
 
         public List<Rechnung> GetRechnung()

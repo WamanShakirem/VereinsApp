@@ -95,18 +95,8 @@ namespace VereinsApp.ViewModel
             // Um zu wissen welches Mitglied ausgewählt ist, Mitglied an DetailWindow übergeben
             MitgliedDetailsWindow window = new MitgliedDetailsWindow(SelectedMitglied);
 
-            //Detail Window close Event ruft Window_Closing Funktion auf
-            window.Closing += Window_Closing;
-
-            window.ShowDialog(); //Wenn sich ShowDialog schließt wird der drrauf folgende untere Code aufgerufen.
-        }
-
-        void Window_Closing(object sender, CancelEventArgs e)
-        {
-            //Wenn Details Windows geschlossen wurde -> Mitglieder neu Laden
-            Trace.WriteLine("Window closed");
-            model.Reload(); // Daten aus der Datenbank neu laden, wenn mitglied gespeichert wurde dann ist es jetzt aktualisiert.
-            MitgliederListe = new ObservableCollection<Mitglied>(model.GetMitglieder()); //Hiermit werden die aktualisierten Daten angezeigt. 
+            window.Closing += Window_Closing; //Detail Window close Event ruft Window_Closing Funktion auf
+            window.ShowDialog(); //Wenn sich ShowDialog schließt wird "Window_Closing" aufgerufen.
         }
 
         private void OpenAddMitgliedWindow(Object obj)
@@ -115,6 +105,14 @@ namespace VereinsApp.ViewModel
             HinzufuegenWindow window = new HinzufuegenWindow();
             window.Closing += Window_Closing;
             window.ShowDialog();
+        }
+
+        void Window_Closing(object sender, CancelEventArgs e)
+        {
+            //Wenn Details Windows geschlossen wurde -> Mitglieder neu Laden
+            Trace.WriteLine("Window closed");
+            model.Reload(); // Daten aus der Datenbank neu laden, wenn mitglied gespeichert wurde dann ist es jetzt aktualisiert.
+            MitgliederListe = new ObservableCollection<Mitglied>(model.GetMitglieder()); //Hiermit werden die aktualisierten Daten angezeigt. 
         }
 
         private void DeleteMitglied(Object obj)

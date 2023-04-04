@@ -8,8 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Background="White"
       Title="UebersichtSeite" Language="de-at"
-      Height="500" Width="1000" MinHeight="500" MinWidth="1000"
->
+      Height="500" Width="1000" MinHeight="500" MinWidth="1000">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -36,7 +35,23 @@
             <Button Grid.Column="4" Width="150" Content="Löschen" Command="{Binding DeleteButtonClickCommand}"/>
         </Grid>
         <!-- Hier werden die Mitglieder in das Datagrid geladen(Binding) -->
-        <DataGrid Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=25}" ItemsSource="{Binding MitgliederListe}"
-            SelectedItem="{Binding SelectedMitglied}"/>
+        <DataGrid Grid.Row="1" ItemsSource="{Binding MitgliederListe}"
+            SelectedItem="{Binding SelectedMitglied}" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Vorname" Binding="{Binding Vorname}"/>
+                <DataGridTextColumn Header="Nachname" Binding="{Binding Nachname}"/>
+                <DataGridTextColumn Header="Geschlecht" Binding="{Binding Geschlecht}"/>
+                <DataGridTextColumn Header="Geburtsdatum" Binding="{Binding Geburtsdatum}"/>
+                <DataGridTextColumn Header="Alter" Binding="{Binding Alter}"/>
+                <DataGridTextColumn Header="Adresse" Binding="{Binding Adresse}"/>
+                <DataGridTextColumn Header="Plz" Binding="{Binding Plz}"/>
+                <DataGridTextColumn Header="Ort" Binding="{Binding Ort}"/>
+                <DataGridTextColumn Header="Telefonnummer" Binding="{Binding Telefonnummer}"/>
+                <DataGridTextColumn Header="E-Mail" Binding="{Binding Email}"/>
+                <DataGridTextColumn Header="Beitrittsdatum" Binding="{Binding Beitrittsdatum}"/>
+                <DataGridTextColumn Header="Notiz" Binding="{Binding Notiz}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

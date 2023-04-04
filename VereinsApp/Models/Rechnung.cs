@@ -12,13 +12,10 @@ namespace VereinsApp.Models
     {
         public int Id { get; set; }
 
-        [DisplayName("Bezahldatum")]
         public DateTime Bezahldatum { get; set; }
 
-        [DisplayName("Betrag")]
         public double Betrag { get; set; }
 
-        [DisplayName("MitgliedId")]
         public int MitgliedId { get; set; }
         public Mitglied Mitglied { get; set; }
 

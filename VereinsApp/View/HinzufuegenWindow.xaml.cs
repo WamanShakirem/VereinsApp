@@ -25,6 +25,5 @@ namespace VereinsApp.View
             InitializeComponent();
             DataContext = new HinzufuegenViewModel();
         }
-
     }
 }
