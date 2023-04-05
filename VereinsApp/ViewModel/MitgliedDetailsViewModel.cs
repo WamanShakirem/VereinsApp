@@ -78,8 +78,6 @@ namespace VereinsApp.ViewModel
         private void DeleteRechnung(Object obj)
         {
             Trace.WriteLine("DeleteRechnung wurde gedrückt.");
-            
-            
             //Wenn eine Rechnung ausgewählt wird ist es ungleich Null.
             if (SelectedRechnung != null)
             {
@@ -88,7 +86,6 @@ namespace VereinsApp.ViewModel
                 //Mitglied und somit auch die Rechnungsliste ersetzen gegen aktualisiertes Mitglied.
                 SelectedMitglied = model.GetMitglied(SelectedMitglied.Id);
             }
-
         }
 
     }

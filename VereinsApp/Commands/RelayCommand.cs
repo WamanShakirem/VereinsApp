@@ -21,8 +21,14 @@ namespace VereinsApp.Commands
     {
         private readonly Action<object> _execute;
         private readonly Predicate<object> _canExecute;
+        private Action sendEmail;
 
         public RelayCommand(Action<object> execute) : this(execute, null) { }
+
+        public RelayCommand(Action sendEmail)
+        {
+            this.sendEmail = sendEmail;
+        }
 
         public RelayCommand(Action<object> execute, Predicate<object> canExecute)
         {

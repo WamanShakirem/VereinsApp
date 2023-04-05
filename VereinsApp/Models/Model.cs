@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,14 +9,14 @@ namespace VereinsApp.Models
 {
     public class Model
     {
-        private DatenbankSteuerung dbSteuerung;
+        private DatenbankSteuerung dbSteuerung = new DatenbankSteuerung();
+        private EmailSender emailSender = new EmailSender();
 
         public List<Mitglied> MitgliederListe;
         public List<Rechnung> RechnungListe;
 
         public Model()
         {
-            dbSteuerung = new DatenbankSteuerung();
             MitgliederListe = dbSteuerung.LoadMitglieder();
             RechnungListe = dbSteuerung.LoadRechnungen();
         }
@@ -69,6 +70,20 @@ namespace VereinsApp.Models
         public List<Rechnung> GetRechnung()
         {
             return this.RechnungListe;
+        }
+
+        public bool SendEmailToAll(string subject, string body)
+        {
+            //Hier wird eine neue Liste E-mails erstellt und dieser Liste werden die E-Mails der Mitglieder hinzugefügt.
+            List<string> emails = new List<string>();
+            foreach(Mitglied mitglied in MitgliederListe)
+            {
+                emails.Add(mitglied.Email);
+                Trace.WriteLine(mitglied.Email);
+            }
+
+            //Email senden
+            return emailSender.SendMail(emails, subject, body); //Gibt zurück ob es geklappt hat oder nicht.
         }
     }
 }

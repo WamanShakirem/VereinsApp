@@ -15,8 +15,11 @@ namespace VereinsApp.ViewModel
     public class HinzufuegenViewModel : BaseViewModel
     {
         public string? Vorname { get; set; }
+
         public string? Nachname { get; set; }
+
         public string? Geschlecht { get; set; }
+
         public DateTime? Geburtsdatum { get; set; }
 
         public string? Adresse { get; set; }
