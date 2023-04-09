@@ -6,10 +6,43 @@
       xmlns:local="clr-namespace:VereinsApp.View"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="StatistikSeite">
+      Title="StatistikSeite" Background="white" >
 
     <Grid>
-        <Label Content="StatistikSeite" HorizontalAlignment="Left" Margin="346,200,0,0" VerticalAlignment="Top"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Column="0" HorizontalAlignment="Left" Margin="50,50,50,50"> 
+            <Label Content="Mitglieder Statistik" FontSize="20" FontWeight="Bold">
+                <Label.Effect>
+                    <DropShadowEffect  Opacity="0.3"/>
+                </Label.Effect>
+            </Label>
+            <Label Content="Mitgliederanzahl:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox Width="200" Text="{Binding Path=Mitgliederanzahl}" IsReadOnly="True"/>
+            <Label Content="Mitgliederanzahl Weiblich:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox Width="200" Text="{Binding Path=Mitgliederanzahl_w}" IsReadOnly="True"/>
+            <Label Content="Mitgliederanzahl Männlich:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox Width="200" Text="{Binding Path=Mitgliederanzahl_m}" IsReadOnly="True"/>
+            <Label Content="Mittleres Alter:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox Width="200" Text="{Binding Path=MittleresAlter}" IsReadOnly="True"/>
+            <Label Content="Anzahl minderjähriger Mitglieder:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox Width="200" Text="{Binding Path=Mitgliederanzahl_minderj}" IsReadOnly="True"/>
+            <Label Content="Anzahl volljähriger Mitglieder::" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox Width="200" Text="{Binding Path=Mitgliederanzahl_vollj}"/>
+
+        </StackPanel>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Left" Margin="50,50,50,50"> 
+            <Label Content="Jüngstes Mitglied:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox Width="200" Text="{Binding Path=JüngstesMitglied}" IsReadOnly="True"/>
+            <Label Content="Ältestes Mitglied:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox Width="200" Text="{Binding Path=ÄltestesMitglied}" IsReadOnly="True"/>
+            <Label Content="Neuestes Mitglied:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox Width="200" Text="{Binding Path=NeustesMitglied}" IsReadOnly="True"/>
+        </StackPanel>
+
 
     </Grid>
 </Page>

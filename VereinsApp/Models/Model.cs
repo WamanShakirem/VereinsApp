@@ -55,7 +55,7 @@ namespace VereinsApp.Models
             Reload();
         }
 
-        public void AddMitglied(string vorname, string nachname, string geschlecht, DateTime geburtsdatum, string adresse, int plz, string ort, string tel, string email, DateTime beitrittsdatum, string mitgliedschaftskategorie, string bezahlmethode, string notiz)
+        public void AddMitglied(string vorname, string nachname, string geschlecht, DateTime geburtsdatum, string adresse, int plz, string ort, string tel, string email, DateTime beitrittsdatum, string mitgliedschaftskategorie, string bezahlmethode, string? notiz)
         {
             dbSteuerung.AddMitglied(vorname, nachname, geschlecht, geburtsdatum, adresse, plz, ort, tel, email, beitrittsdatum, mitgliedschaftskategorie, bezahlmethode, notiz);
             Reload();
@@ -72,6 +72,8 @@ namespace VereinsApp.Models
             return this.RechnungListe;
         }
 
+
+
         public bool SendEmailToAll(string subject, string body)
         {
             //Hier wird eine neue Liste E-mails erstellt und dieser Liste werden die E-Mails der Mitglieder hinzugefügt.
@@ -81,7 +83,6 @@ namespace VereinsApp.Models
                 emails.Add(mitglied.Email);
                 Trace.WriteLine(mitglied.Email);
             }
-
             //Email senden
             return emailSender.SendMail(emails, subject, body); //Gibt zurück ob es geklappt hat oder nicht.
         }

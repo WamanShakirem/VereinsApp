@@ -28,7 +28,7 @@ namespace VereinsApp.Models
             return context.Mitglieder.Include(m => m.RechnungListe).ToList(); //Mitglieder zurückgeben
         }
 
-        public void AddMitglied(string vorname, string nachname, string geschlecht, DateTime geburtsdatum, string adresse, int plz, string ort, string tel, string email, DateTime beitrittsdatum, string mitgliedschaftskategorie, string bezahlmethode, string notiz)
+        public void AddMitglied(string vorname, string nachname, string geschlecht, DateTime geburtsdatum, string adresse, int plz, string ort, string tel, string email, DateTime beitrittsdatum, string mitgliedschaftskategorie, string bezahlmethode, string? notiz)
         {
             Trace.WriteLine("DatenbankSteuerung: add Mitglied: " + vorname);
             using (VereinsKontext context = new VereinsKontext())

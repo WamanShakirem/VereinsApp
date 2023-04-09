@@ -61,7 +61,6 @@ namespace VereinsApp.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Notiz")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Ort")

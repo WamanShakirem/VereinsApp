@@ -72,7 +72,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button Content="Exportieren" Height="25" Width="122" RenderTransformOrigin="0.5,0">
+            <Button Content="Exportieren" Height="25" Width="122" Command="{Binding ExportierenClickCommand}" RenderTransformOrigin="0.5,0">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>

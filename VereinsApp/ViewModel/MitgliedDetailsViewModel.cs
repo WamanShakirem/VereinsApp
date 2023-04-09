@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +38,8 @@ namespace VereinsApp.ViewModel
 
         public ICommand DeleteRechnungClickCommand { get; private set; }
 
+        public ICommand ExportierenClickCommand { get; private set; }
+
         public MitgliedDetailsViewModel(Mitglied SelectedMitglied) //Konstuktor
         {
             model = new Model();
@@ -44,7 +48,8 @@ namespace VereinsApp.ViewModel
 
             SpeichernClickCommand = new RelayCommand(MitgliedSpeichern); //Command eine Zielfunktion zuweisen
             RechnungAddClickCommand = new RelayCommand(RechnungAdd); 
-            DeleteRechnungClickCommand = new RelayCommand(DeleteRechnung); 
+            DeleteRechnungClickCommand = new RelayCommand(DeleteRechnung);
+            ExportierenClickCommand = new RelayCommand(MitgliedExportieren);
         }
 
         private void MitgliedSpeichern(Object obj)
@@ -86,6 +91,26 @@ namespace VereinsApp.ViewModel
                 //Mitglied und somit auch die Rechnungsliste ersetzen gegen aktualisiertes Mitglied.
                 SelectedMitglied = model.GetMitglied(SelectedMitglied.Id);
             }
+        }
+
+        private void MitgliedExportieren(Object obj)
+        {
+            Trace.WriteLine("Exportiern wurde geklickt.");
+
+            //Dialog öffnen
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "CSV-Datei (*.csv)|*.csv";
+            saveFileDialog.InitialDirectory = @"C:\";
+            saveFileDialog.FileName = SelectedMitglied.Vorname + "_" + SelectedMitglied.Nachname;
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                string fileName = saveFileDialog.FileName;
+
+                //Mitglied-Daten abspeichern
+                string content = SelectedMitglied.ExportDetails();
+                File.WriteAllText(fileName, content);
+            }
+
         }
 
     }

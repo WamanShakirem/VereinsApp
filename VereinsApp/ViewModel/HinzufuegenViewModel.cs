@@ -14,23 +14,23 @@ namespace VereinsApp.ViewModel
 {
     public class HinzufuegenViewModel : BaseViewModel
     {
-        public string? Vorname { get; set; }
+        public string Vorname { get; set; }
 
-        public string? Nachname { get; set; }
+        public string Nachname { get; set; }
 
         public string? Geschlecht { get; set; }
 
         public DateTime? Geburtsdatum { get; set; }
 
-        public string? Adresse { get; set; }
+        public string Adresse { get; set; }
 
         public int? Plz { get; set; }
 
-        public string? Ort { get; set; }
+        public string Ort { get; set; }
 
-        public string? Telefonnummer { get; set; }
+        public string Telefonnummer { get; set; }
 
-        public string? Email { get; set; }
+        public string Email { get; set; }
 
         public DateTime? Beitrittsdatum { get; set; }
 
@@ -38,7 +38,7 @@ namespace VereinsApp.ViewModel
 
         public string? Bezahlmethode { get; set; }
 
-        public string? Notiz { get; set; }
+        public string Notiz { get; set; }
 
         public ICommand AddClickCommand { get; private set; }
 
@@ -55,18 +55,16 @@ namespace VereinsApp.ViewModel
 
             //Testen ob jedes Feld ausgefüllt wurde! 
 
-            if (Vorname == null || Nachname == null || Geschlecht == null || Geburtsdatum == null ||
-                Adresse == null || Plz == null || Ort == null || Telefonnummer == null ||
-                Email == null || Beitrittsdatum == null || Mitgliedschaftskategorie == null ||
-                Bezahlmethode == null || Notiz == null)
+            if (Vorname == "" || Nachname == "" || Geschlecht == null || Geburtsdatum == null ||
+                Adresse == "" || Plz == null || Ort == "" || Telefonnummer == "" ||
+                Email == "" || Beitrittsdatum == null || Mitgliedschaftskategorie == null ||
+                Bezahlmethode == null)
             {
                 MessageBox.Show("Bitte alle Felder ausfüllen!");
+                return;
             }
-            else
-            {
-                model.AddMitglied(Vorname, Nachname, Geschlecht, Geburtsdatum.Value, Adresse, Plz.Value, Ort, Telefonnummer, Email, Beitrittsdatum.Value, Mitgliedschaftskategorie, Bezahlmethode, Notiz);
-                
-            }
+            model.AddMitglied(Vorname, Nachname, Geschlecht, Geburtsdatum.Value, Adresse, Plz.Value, Ort, Telefonnummer, Email, Beitrittsdatum.Value, Mitgliedschaftskategorie, Bezahlmethode, Notiz);
+
 
         }
     }

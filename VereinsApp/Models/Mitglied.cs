@@ -25,7 +25,7 @@ namespace VereinsApp.Models
         public DateTime Beitrittsdatum { get; set; }
         public string Mitgliedschaftskategorie { get; set; }
         public string Bezahlmethode { get; set; }
-        public string Notiz { get; set; }
+        public string? Notiz { get; set; }
         public List<Rechnung> RechnungListe { get; set; }
 
         public Mitglied(string vorname, string nachname, string geschlecht, DateTime geburtsdatum, string adresse, int plz, string ort, string tel, string email, DateTime beitrittsdatum, string mitgliedschaftskategorie, string bezahlmethode, string notiz)
@@ -47,6 +47,12 @@ namespace VereinsApp.Models
         
         public Mitglied(){}
 
+        public string ExportDetails()
+        {
+            return $"{this.Vorname}, {this.Nachname}, {this.Geschlecht}, {this.Geburtsdatum}," +
+                   $" {this.Adresse}, {this.Plz}, {this.Ort}, {this.Telefonnummer}," +
+                   $" {this.Email}, {this.Mitgliedschaftskategorie}, {this.Bezahlmethode}, {this.Notiz}";
+        }
 
 
     }

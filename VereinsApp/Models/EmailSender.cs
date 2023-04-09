@@ -26,7 +26,7 @@ namespace VereinsApp.Models
                 mail.Subject = subject;
                 mail.Body = msg;
 
-                //empfänger hinzufügen
+                // Empfänger hinzufügen
                 foreach(string recipient in receiver_emails)
                 {
                     mail.To.Add(recipient);
@@ -36,7 +36,7 @@ namespace VereinsApp.Models
                 // SMTP-Einstellungen für den Gmail-Server
                 SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
                 smtpClient.UseDefaultCredentials = false;
-                smtpClient.Credentials = credentials
+                smtpClient.Credentials = credentials;
                 smtpClient.EnableSsl = true;
 
                 // Sende die E-Mail
