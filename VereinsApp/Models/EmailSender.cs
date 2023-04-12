@@ -12,8 +12,8 @@ namespace VereinsApp.Models
     public class EmailSender
     {
         // E-Mail-Einstellungen
-        private static string senderEmail = "qonix123@gmail.com";
-        private static string senderPassword = "okqsxqljdpskyvbi";
+        private static string senderEmail = "qonix123@gmx.at";
+        private static string senderPassword = "ggffncc123";
         private static NetworkCredential credentials = new NetworkCredential(senderEmail, senderPassword);
 
         public bool SendMail(List<string> receiver_emails, string subject, string msg)
@@ -34,7 +34,7 @@ namespace VereinsApp.Models
 
 
                 // SMTP-Einstellungen für den Gmail-Server
-                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+                SmtpClient smtpClient = new SmtpClient("mail.gmx.net", 587);
                 smtpClient.UseDefaultCredentials = false;
                 smtpClient.Credentials = credentials;
                 smtpClient.EnableSsl = true;
