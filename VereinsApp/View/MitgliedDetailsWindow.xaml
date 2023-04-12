@@ -85,7 +85,7 @@
         </StackPanel>
         <StackPanel Grid.Column="1" HorizontalAlignment="Center">
             <Label Content="Rechnungen"/>
-            <DataGrid MaxHeight="400" d:ItemsSource="{d:SampleData ItemCount=5}" SelectedItem="{Binding SelectedRechnung}" ItemsSource="{Binding SelectedMitglied.RechnungListe, Mode=TwoWay}" AutoGenerateColumns="False">
+            <DataGrid MaxHeight="400" d:ItemsSource="{d:SampleData ItemCount=5}" SelectedItem="{Binding SelectedRechnung}" ItemsSource="{Binding SelectedMitglied.RechnungListe, Mode=TwoWay}" AutoGenerateColumns="False" IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
                     <DataGridTextColumn Header="Datum" Binding="{Binding Bezahldatum}"/>

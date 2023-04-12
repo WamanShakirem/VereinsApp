@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Windows.Navigation;
 
 namespace VereinsApp.Models
 {
@@ -27,6 +28,10 @@ namespace VereinsApp.Models
         public string Bezahlmethode { get; set; }
         public string? Notiz { get; set; }
         public List<Rechnung> RechnungListe { get; set; }
+
+        public bool Bezahlt { 
+            get { return HasPayed(); }
+        }
 
         public Mitglied(string vorname, string nachname, string geschlecht, DateTime geburtsdatum, string adresse, int plz, string ort, string tel, string email, DateTime beitrittsdatum, string mitgliedschaftskategorie, string bezahlmethode, string notiz)
         {
@@ -54,6 +59,42 @@ namespace VereinsApp.Models
                    $" {this.Email}, {this.Mitgliedschaftskategorie}, {this.Bezahlmethode}, {this.Notiz}";
         }
 
+        private bool HasPayed() //Bezahlt oder nicht
+        {
+            //Wenn keine Rechnungen vorhanden sind dann ist die Rechnung nicht bezahlt
+            if(this.RechnungListe.Count == 0) return false;
+
+            //Rechnung sortieren nach Bezahltdatum und dann die erste Rechnung auswählen
+            Rechnung lastRechnung = RechnungListe.OrderByDescending(r => r.Bezahldatum).First();
+
+            if (this.Mitgliedschaftskategorie == "Monatlich")
+            {
+                // Wenn die letzte Rechnung maximal ein Monat alt ist dann ist die Rechnung bezahlt sonst nein
+                DateTime heuteVorEinemMonat = DateTime.Now.AddMonths(-1);
+
+                return lastRechnung.Bezahldatum >= heuteVorEinemMonat;
+            }
+            else if (this.Mitgliedschaftskategorie == "Halbjährlich")
+            {
+                // wenn letzte rechnung maximal ein halbes jahr alt ist dann bezahlt sont nein
+                DateTime heuteVor6Monaten = DateTime.Now.AddMonths(-6);
+
+                return lastRechnung.Bezahldatum >= heuteVor6Monaten;
+
+            }
+            else if(this.Mitgliedschaftskategorie == "Jährlich")
+            {
+                // wenn letzte rechnung maximal ein jahr alt ist dann bezahlt sont nein
+                DateTime heuteVorEinemJahr = DateTime.Now.AddYears(-1);
+
+                return lastRechnung.Bezahldatum >= heuteVorEinemJahr;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
 
     }
 }

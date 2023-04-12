@@ -42,14 +42,15 @@
                 <DataGridTextColumn Header="Vorname" Binding="{Binding Vorname}"/>
                 <DataGridTextColumn Header="Nachname" Binding="{Binding Nachname}"/>
                 <DataGridTextColumn Header="Geschlecht" Binding="{Binding Geschlecht}"/>
-                <DataGridTextColumn Header="Geburtsdatum" Binding="{Binding Geburtsdatum}"/>
+                <DataGridCheckBoxColumn Header="Bezahlt" Binding="{Binding Bezahlt, Mode=OneWay}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Geburtsdatum" Binding="{Binding Geburtsdatum, StringFormat={}{0:dd/MM/yyyy}}"/>
                 <DataGridTextColumn Header="Alter" Binding="{Binding Alter}"/>
                 <DataGridTextColumn Header="Adresse" Binding="{Binding Adresse}"/>
                 <DataGridTextColumn Header="Plz" Binding="{Binding Plz}"/>
                 <DataGridTextColumn Header="Ort" Binding="{Binding Ort}"/>
                 <DataGridTextColumn Header="Telefonnummer" Binding="{Binding Telefonnummer}"/>
                 <DataGridTextColumn Header="E-Mail" Binding="{Binding Email}"/>
-                <DataGridTextColumn Header="Beitrittsdatum" Binding="{Binding Beitrittsdatum}"/>
+                <DataGridTextColumn Header="Beitrittsdatum" Binding="{Binding Beitrittsdatum, StringFormat={}{0:dd/MM/yyyy}}"/>
                 <DataGridTextColumn Header="Notiz" Binding="{Binding Notiz}"/>
             </DataGrid.Columns>
         </DataGrid>
